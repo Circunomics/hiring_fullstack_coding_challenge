@@ -9,3 +9,9 @@
 
 controllers:
     resource: routing.controllers
+
+repository_insights_controllers:
+    resource:
+        path: ../src/RepositoryInsights/Infrastructure/Web/Controller/
+        namespace: App\RepositoryInsights\Infrastructure\Web\Controller
+    type: attribute

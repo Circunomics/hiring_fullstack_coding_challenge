@@ -1,0 +1,10 @@
+services:
+    App\Tests\Fixtures\Provider\RecordingGitProvider:
+        public: true
+        arguments:
+            $commits: []
+
+    App\RepositoryInsights\Application\Service\CommitProviderRegistry:
+        arguments:
+            $providers:
+                - '@App\Tests\Fixtures\Provider\RecordingGitProvider'
