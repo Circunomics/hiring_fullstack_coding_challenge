@@ -17,4 +17,4 @@ RUN composer dump-autoload --optimize \
 
 EXPOSE 8000
 
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "public", "public/index.php"]
+CMD ["sh", "-c", "php bin/console doctrine:migrations:migrate --no-interaction && php bin/console doctrine:migrations:migrate --env=test --no-interaction && exec php -S 0.0.0.0:8000 -t public public/index.php"]
